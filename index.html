@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
+    <title>Codigos QR Y Barra</title>
+</head>
+
+<body class="container">
+    <header class="bg-info">
+        <h1 class="text-center">Generador de codigos QR y Barra</h1>
+    </header>
+    <div class="col-sm-12">
+        <form class="container-fluid" method="POST">
+            <div class="form-group">
+                <label>Código:</label>
+                <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código Barras o QR">
+                <button class="btn btn-success" id="bar" type="button"
+                    onclick="generarbarcode(),validarCodigoQR()">Generar Bar</button>
+                <button class="btn btn-success" id="qr" type="button"
+                    onclick="generarqrcode(),validarCodigoBar()">Generar QR</button>
+                <button class="btn btn-info" id="impriBar" type="button" onclick="imprimirBar()">Imprimir Bar</button>
+                <button class="btn btn-info" id="impriQR" type="button" onclick="imprimirQR()">Imprimir QR</button>
+                <div id="print">
+                    <div id="qrcode"></div>
+                    <svg id="barcode"></svg>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <button class="btn btn-danger" onclick="cancelar()" type="button"><i
+                        class="fa fa-arrow-circle-left"></i> Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+       
+        <!-- jQuery -->
+        <script src="public/js/jquery-3.1.1.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+        <!-- libreria para generar codigo de barra-->
+        <script type="text/javascript" src="public/js/JsBarcode.all.min.js"></script>
+         <!-- libreria para generar codigo QR-->
+        <script type="text/javascript" src="public/js/QR/jquery-qrcode-0.18.0.min.js"></script>
+         <!-- libreria para imprimir -->
+        <script type="text/javascript" src="public/js/jquery.PrintArea.js"></script>
+         <!-- libreria para imprimir -->
+        <script type="text/javascript" src="public/js/print.min.js"></script>
+        <script type="text/javascript" src="public/app.js"></script>
+    </footer>
+</body>
+
+</html>
